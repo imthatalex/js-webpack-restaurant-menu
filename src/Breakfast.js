@@ -22,20 +22,26 @@ export default function Breakfast() {
         createColumn.setAttribute('id', i);
         createColumn.classList.add('col');
 
-        for (let j = 0; j < 5; j++) {
-            const createRow = document.createElement('div');
-            createRow.classList.add('row');
-            if (createColumn.id == 0) {
+        if (createColumn.id == 0) {
+            for (let j = 0; j < 5; j++) {
+                const createRow = document.createElement('div');
+                createRow.classList.add('row');
                 createRow.textContent = MainDishes[j];
+                createColumn.appendChild(createRow);
             }
-            if (createColumn.id == 1) {
-                createRow.textContent = HotDrinks[j];
-            }
-            if (createColumn.id == 2) {
-                createRow.textContent = FruitDrinks[j];
-            }
-            createColumn.append(createRow);
         }
+        if (createColumn.id == 1) {
+            createColumn.classList.add('menuImage')
+        }
+        if (createColumn.id == 2) {
+            for (let j = 0; j < 5; j++) {
+                const createRow = document.createElement('div');
+                createRow.classList.add('row');
+                createRow.textContent = FruitDrinks[j];
+                createColumn.appendChild(createRow);
+            }
+        }
+
 
         MenuItems.push(createColumn);
         Menu.appendChild(MenuItems[i]);

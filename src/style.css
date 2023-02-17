@@ -8,6 +8,13 @@
     border: 1px solid purple;
 }
 
+.menuImage {
+    background-image: url(./breakfast.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
 .row {
     padding: 10px;
     border: 1px solid blue;
