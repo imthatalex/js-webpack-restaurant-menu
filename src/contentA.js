@@ -1,5 +1,4 @@
 export default function A() {
-    // store values
     const valuesA = document.createElement('div');
 
     const MenuTitle = document.createElement('h2');
@@ -10,14 +9,13 @@ export default function A() {
 
     const MenuItems = document.createElement('div');
     MenuItems.classList.add('menuItems')
-    const MenuItemsA = ['Pancakes', 'Waffles', 'Eggs & Bacon'];
-    // iterate through the MenuItemsA arr
-    for (let i = 0; i < MenuItemsA.length; i++) {
-        const MenuItem = document.createElement('div');
-        MenuItem.classList.add('menuItem');
-        MenuItem.classList.add('row');
-        MenuItem.textContent = MenuItemsA[i];
-        MenuItems.appendChild(MenuItem);
+
+    const ROWS = [];
+
+    for (let k = 0; k < 6; k++) {
+        const MenuItemRow = document.createElement('div');
+        MenuItemRow.classList.add('row');
+        ROWS.push(MenuItemRow);
     }
 
     valuesA.appendChild(MenuTitle);
