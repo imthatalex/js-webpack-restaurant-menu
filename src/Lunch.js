@@ -26,6 +26,7 @@ export default function Lunch() {
 
         const menuItemsTitle = document.createElement('div');
         menuItemsTitle.classList.add('menuItemTitle');
+        menuItemsTitle.classList.add('row');
         createColumn.appendChild(menuItemsTitle);
 
         // switch statement

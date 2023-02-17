@@ -12,6 +12,8 @@ export default function Lunch() {
 
     const MenuItems = [];
     const MainDishes = ['Eggs & Bacon', 'Blueberry Pancakes', 'Chocolate Chip Pancakes', 'Scrambled Eggs', 'Grilled Cheese'];
+    const MainDishesPricing = ['$4.00', '$4.00', '$4.00', '$4.00', '$4.00']
+
     const HotDrinks = ['Coffee', 'Lemon Tea', 'Green Tea', 'Tea', 'Coco'];
     const FruitDrinks = ['Pineapple', 'Apple', 'Orange', 'Strawberry', 'Watermelon'];
     const Pastry = ['Chocolate Donuts', 'Muffins', 'Jelly Donuts', 'Chocolate Ice Cream Cones', 'Vanilla Ice Cream Cones'];
@@ -26,6 +28,7 @@ export default function Lunch() {
 
         const menuItemsTitle = document.createElement('div');
         menuItemsTitle.classList.add('menuItemTitle');
+        menuItemsTitle.classList.add('row');
         createColumn.appendChild(menuItemsTitle);
 
         // switch statement
@@ -35,8 +38,14 @@ export default function Lunch() {
             for (let j = 0; j < 5; j++) {
                 const createRow = document.createElement('div');
                 createRow.classList.add('row');
+                createRow.classList.add('menuItem');
                 createRow.textContent = MainDishes[j];
                 createColumn.appendChild(createRow);
+
+                const createRow2 = document.createElement('div');
+                createRow2.classList.add('row');
+                createRow2.textContent = MainDishesPricing[j];
+                createRow.appendChild(createRow2);
             }
         }
 

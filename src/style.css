@@ -1,67 +1,74 @@
 body {
-    background-image: url(./mixWallpaper.jpeg);
+    background-image: url(./hdWallpaper.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    color: #FFF;
+    height: 100vh;
+    overflow-y: hidden;
 }
 
 button {
-    background-color: orange;
     padding: 10px 12px;
 }
 
 .outerContent {
-    border: 1px solid orange;
     text-align: center;
 }
 
 .innerContent {
-    border: 1px solid red;
     text-align: center;
 }
 
 .menuItemTitle {
-    font-weight: 600;
+    font-weight: bolder;
+    font-size: 2rem;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .menuItem {
-    text-align: left;
+    height: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
 }
 
 .menuItems {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    border: 1px solid purple;
 }
 
 .breakFastMenuImage {
-    background-image: url(./gokuEating.gif);
+    background-image: url(./breakfast.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
 }
 
 .lunchMenuImage {
-    background-image: url(./bleachBuffet.webp);
+    background-image: url(./Lunch.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
 }
 
 .dinnerMenuImage {
-    background-image: url(./luffyEating.gif);
+    background-image: url(./dffStyle.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
 }
 
 .row {
-    padding: 5px;
-    border: 1px solid blue;
+    
 }
 
 .col {
-    border: 1px solid green;
     display: grid;
     grid-template-rows: repeat(3, 1fr);
+    padding-bottom: 20px;
 }
