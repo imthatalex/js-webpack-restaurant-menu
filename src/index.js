@@ -2,7 +2,7 @@
 import './style.css';
 
 // import content values
-import contentA from './contentA';
+import BreakfastMenu from './Breakfast';
 import contentB from './contentB';
 import contentC from './contentC';
 
@@ -43,7 +43,7 @@ function renderComponent() {
     document.body.appendChild(innerContent);
 
     // append initial values to core component
-    innerContent.appendChild(contentA());
+    innerContent.appendChild(BreakfastMenu());
 
     // render component values
     function functionA() {
@@ -67,7 +67,7 @@ function renderComponent() {
         if (id == 'A') {
             // clear value
             innerContent.textContent = '';
-            innerContent.appendChild(contentA());
+            innerContent.appendChild(BreakfastMenu());
         }
 
         if (id == 'B') {
