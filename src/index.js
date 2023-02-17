@@ -1,28 +1,23 @@
+// loaded to be handled by bundler
+import './style.css';
+
+// import content values
+import contentA from './contentA';
+import contentB from './contentB';
+import contentC from './contentC';
+
 // Render Content
-
 function renderComponent() {
-    // if tab a is clicked render function a else if b is clicked...
+    // inner core component
+    const innerContent = document.createElement('div');
+    innerContent.setAttribute('id', 'A');
+    innerContent.classList.add('innerContent');
 
+    // outer core component
+    const outerContent = document.createElement('div');
+    outerContent.classList.add('outerContent')
 
-    const divElement = document.createElement('div');
-    divElement.textContent = 'Hello World';
-
-
-    function functionA() {
-        divElement.textContent = 'A';
-    }
-
-    function functionB() {
-        divElement.textContent = 'B';
-    }
-
-    function functionC() {
-        divElement.textContent = 'C';
-    }
-
-    const content = document.createElement('div');
-    content.setAttribute('id', 'content');
-
+    // user input buttons
     const buttonA = document.createElement('button');
     buttonA.textContent = 'Button A';
 
@@ -32,20 +27,59 @@ function renderComponent() {
     const buttonC = document.createElement('button');
     buttonC.textContent = 'Button C';
 
-
+    // user input event listeners
     buttonA.addEventListener('click', functionA);
     buttonB.addEventListener('click', functionB);
     buttonC.addEventListener('click', functionC);
 
-
     // make a multiple appendChild
-    content.appendChild(divElement);
-    content.appendChild(buttonA);
-    content.appendChild(buttonB);
-    content.appendChild(buttonC);
+    // append buttons to core component
+    outerContent.appendChild(buttonA);
+    outerContent.appendChild(buttonB);
+    outerContent.appendChild(buttonC);
 
+    // append core component to html document
+    document.body.appendChild(outerContent);
+    document.body.appendChild(innerContent);
 
-    document.body.appendChild(content);
+    // append initial values to core component
+    innerContent.appendChild(contentA());
+
+    // render component values
+    function functionA() {
+        innerContent.id = 'A';
+        changeValues(innerContent.id);
+    }
+
+    function functionB() {
+        innerContent.id = 'B';
+        changeValues(innerContent.id);
+    }
+
+    function functionC() {
+        innerContent.id = 'C';
+        changeValues(innerContent.id);
+    }
+
+    // change component values
+    function changeValues(id) {
+        // switch statement
+        if (id == 'A') {
+            // clear value
+            innerContent.textContent = '';
+            innerContent.appendChild(contentA());
+        }
+
+        if (id == 'B') {
+            innerContent.textContent = '';
+            innerContent.appendChild(contentB());
+        }
+
+        if (id == 'C') {
+            innerContent.textContent = '';
+            innerContent.appendChild(contentC());
+        }
+    }
 }
 
 
@@ -58,3 +92,6 @@ renderComponent();
 
 
 // DOM Manipulation : SPA : Switching Between Content via User Input
+
+// Assignment
+// Export Content Values as Modules

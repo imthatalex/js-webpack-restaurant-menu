@@ -1,0 +1,20 @@
+.outerContent {
+    border: 1px solid blue;
+}
+
+.innerContent {
+    border: 1px solid red;
+}
+
+.menuItems {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.row {
+    border: 1px solid green;
+}
+
+.col {
+    border: 1px solid orange;
+}
