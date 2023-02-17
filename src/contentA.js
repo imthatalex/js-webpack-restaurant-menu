@@ -10,13 +10,33 @@ export default function A() {
     const MenuItems = document.createElement('div');
     MenuItems.classList.add('menuItems')
 
-    const ROWS = [];
 
-    for (let k = 0; k < 6; k++) {
-        const MenuItemRow = document.createElement('div');
-        MenuItemRow.classList.add('row');
-        ROWS.push(MenuItemRow);
+    const Items = [];
+
+    const BItems = ['text1', 'text2', 'tex3t', 'text4', 'text5', 'text6']
+
+    // create columns and rows
+    for (let i = 0; i < 3; i++) {
+        const createColumn = document.createElement('div');
+        createColumn.classList.add('col');
+
+
+        for (let i = 0; i < 6; i++) {
+            const createRow = document.createElement('div');
+            createRow.classList.add('row');
+            createRow.textContent = BItems[i];
+            createColumn.append(createRow);
+        }
+
+
+        Items.push(createColumn);
+        MenuItems.appendChild(Items[i]);
+
     }
+
+
+
+
 
     valuesA.appendChild(MenuTitle);
     valuesA.appendChild(MenuDescription);
