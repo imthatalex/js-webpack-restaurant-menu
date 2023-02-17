@@ -3,8 +3,8 @@ import './style.css';
 
 // import content values
 import BreakfastMenu from './Breakfast';
-import contentB from './contentB';
-import contentC from './contentC';
+import LunchMenu from './Lunch';
+import DinnerMenu from './Dinner';
 
 // Render Content
 function renderComponent() {
@@ -72,12 +72,12 @@ function renderComponent() {
 
         if (id == 'B') {
             innerContent.textContent = '';
-            innerContent.appendChild(contentB());
+            innerContent.appendChild(LunchMenu());
         }
 
         if (id == 'C') {
             innerContent.textContent = '';
-            innerContent.appendChild(contentC());
+            innerContent.appendChild(DinnerMenu());
         }
     }
 }

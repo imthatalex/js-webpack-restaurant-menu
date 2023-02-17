@@ -1,5 +1,31 @@
+body {
+    background-image: url(./mixWallpaper.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+button {
+    background-color: orange;
+    padding: 10px 12px;
+}
+
+.outerContent {
+    border: 1px solid orange;
+    text-align: center;
+}
+
 .innerContent {
     border: 1px solid red;
+    text-align: center;
+}
+
+.menuItemTitle {
+    font-weight: 600;
+}
+
+.menuItem {
+    text-align: left;
 }
 
 .menuItems {
@@ -8,15 +34,29 @@
     border: 1px solid purple;
 }
 
-.menuImage {
-    background-image: url(./breakfast.png);
+.breakFastMenuImage {
+    background-image: url(./gokuEating.gif);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.lunchMenuImage {
+    background-image: url(./bleachBuffet.webp);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.dinnerMenuImage {
+    background-image: url(./luffyEating.gif);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
 }
 
 .row {
-    padding: 10px;
+    padding: 5px;
     border: 1px solid blue;
 }
 
