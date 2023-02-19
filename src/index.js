@@ -2,7 +2,6 @@
 import './style.css';
 
 // import content values
-import BreakfastMenu from './Breakfast';
 import LunchMenu from './Lunch';
 import DinnerMenu from './Dinner';
 
@@ -10,7 +9,7 @@ import DinnerMenu from './Dinner';
 function renderComponent() {
     // inner core component
     const innerContent = document.createElement('div');
-    innerContent.setAttribute('id', 'A');
+    innerContent.setAttribute('id', 'Lunch');
     innerContent.classList.add('innerContent');
 
     // outer core component
@@ -18,64 +17,49 @@ function renderComponent() {
     outerContent.classList.add('outerContent')
 
     // user input buttons
-    const buttonA = document.createElement('button');
-    buttonA.textContent = 'Button A';
+    const lunchButton = document.createElement('button');
+    lunchButton.classList.add('button-89');
+    lunchButton.textContent = 'Lunch';
 
-    const buttonB = document.createElement('button');
-    buttonB.textContent = 'Button B';
-
-    const buttonC = document.createElement('button');
-    buttonC.textContent = 'Button C';
+    const dinnerButton = document.createElement('button');
+    dinnerButton.classList.add('button-89');
+    dinnerButton.textContent = 'Dinner';
 
     // user input event listeners
-    buttonA.addEventListener('click', functionA);
-    buttonB.addEventListener('click', functionB);
-    buttonC.addEventListener('click', functionC);
+    lunchButton.addEventListener('click', renderLunchMenu);
+    dinnerButton.addEventListener('click', renderDinnerMenu);
 
     // make a multiple appendChild
-    // append buttons to core component
-    outerContent.appendChild(buttonA);
-    outerContent.appendChild(buttonB);
-    outerContent.appendChild(buttonC);
+    // append buttons to outer core component
+    outerContent.appendChild(lunchButton);
+    outerContent.appendChild(dinnerButton);
 
-    // append core component to html document
+    // append core components to html document
     document.body.appendChild(outerContent);
     document.body.appendChild(innerContent);
 
-    // append initial values to core component
-    innerContent.appendChild(BreakfastMenu());
+    // append initial values to inner core component
+    innerContent.appendChild(LunchMenu());
 
     // render component values
-    function functionA() {
-        innerContent.id = 'A';
+    function renderLunchMenu() {
+        innerContent.id = 'Lunch';
         changeValues(innerContent.id);
     }
 
-    function functionB() {
-        innerContent.id = 'B';
-        changeValues(innerContent.id);
-    }
-
-    function functionC() {
-        innerContent.id = 'C';
+    function renderDinnerMenu() {
+        innerContent.id = 'Dinner';
         changeValues(innerContent.id);
     }
 
     // change component values
     function changeValues(id) {
-        // switch statement
-        if (id == 'A') {
-            // clear value
-            innerContent.textContent = '';
-            innerContent.appendChild(BreakfastMenu());
-        }
-
-        if (id == 'B') {
+        if (id == 'Lunch') {
             innerContent.textContent = '';
             innerContent.appendChild(LunchMenu());
         }
 
-        if (id == 'C') {
+        if (id == 'Dinner') {
             innerContent.textContent = '';
             innerContent.appendChild(DinnerMenu());
         }
@@ -84,14 +68,3 @@ function renderComponent() {
 
 
 renderComponent();
-
-
-
-
-
-
-
-// DOM Manipulation : SPA : Switching Between Content via User Input
-
-// Assignment
-// Export Content Values as Modules
